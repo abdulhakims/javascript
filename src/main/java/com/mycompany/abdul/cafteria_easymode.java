@@ -22,7 +22,10 @@ public class cafteria_easymode {
 
         double snackTotal = 0;
         double drinkTotal = 0;
-
+        
+        boolean ordering = true;
+        
+        while (ordering){
         System.out.println("CAFETERIA");
         System.out.println("Menu!");
         System.out.println("[Snacks]");
@@ -59,6 +62,18 @@ public class cafteria_easymode {
             int quan = input.nextInt();
             drinkTotal = quan * zest;
         }
+        
+         // Ask if they want to order again
+        System.out.println("\nDo you want to order again?");
+        System.out.println("[1] Yes");
+        System.out.println("[0] No, proceed to payment");
+        System.out.print("Enter choice: ");
+        int again = input.nextInt();
+        
+        if (again == 0){
+            ordering = false;
+        }
+        }
 
         // Compute total
         double subtotal = snackTotal + drinkTotal;
@@ -81,6 +96,8 @@ public class cafteria_easymode {
         System.out.println("Your change is: " + change);
         System.out.println("Thank you for your order!");
     }
-}
+
+    }
+
     
 
